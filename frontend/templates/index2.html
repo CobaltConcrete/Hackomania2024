@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+
+    <style>
+        h1 {
+            text-align: center;
+            /* This will center the heading */
+            margin-bottom: 20px;
+            /* Adds space below the heading */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /* Stacks content vertically */
+            align-items: center;
+            /* Centers content horizontally */
+            min-height: 100vh;
+            background-color: #add8e6;
+        }
+
+        form {
+            width: 50%;
+            /* Rest of your form styling */
+        }
+
+        input[type="submit"] {
+            background-color: #00008b;
+            /* Dark blue background */
+            color: white;
+            /* White text color */
+            padding: 10px 20px;
+            /* Some padding */
+            border: none;
+            /* No border */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0000cd;
+            /* Slightly lighter blue on hover */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group label {
+            flex: 0 0 20%;
+            margin-right: 10px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Patient's Particulars</h1>
+    <form action="/predict" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <textarea id="location" name="location" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="symptoms">Symptoms:</label>
+            <textarea id="symptoms" name="symptoms" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="duration">Duration (h):</label>
+            <input type="number" id="duration" name="duration" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="causes">Causes:</label>
+            <textarea id="causes" name="causes" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="medicine">Medicine:</label>
+            <textarea id="medicine" name="medicine" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="medicalHistory">Medical history:</label>
+            <textarea id="medicalHistory" name="medicalHistory" required></textarea>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <h4 style="color:Violet;">
+        {{ prediction_text }} </h4>
+</body>
+
+</html>
