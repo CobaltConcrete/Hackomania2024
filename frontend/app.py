@@ -19,7 +19,7 @@ from sklearn.pipeline import make_pipeline
 
 app = Flask(__name__)
 app.config['EXPLAIN_TEMPLATE_LOADING'] = True
-# model = pickle.load(open('models/rf_model_dis.pkl','rb'))
+model = pickle.load(open('models/rf_model_dis.pkl','rb'))
 
 def geocode_address(address):
     url = 'https://maps.googleapis.com/maps/api/geocode/json'
