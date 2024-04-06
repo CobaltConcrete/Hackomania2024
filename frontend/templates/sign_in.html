@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        h1 {
+            text-align: center;
+            /* This will center the heading */
+            margin-bottom: 20px;
+            /* Adds space below the heading */
+        }
+    
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /* Stacks content vertically */
+            align-items: center;
+            /* Centers content horizontally */
+            min-height: 100vh;
+            background-color: #add8e6;
+        }
+    
+        form {
+            width: 50%;
+            /* Rest of your form styling */
+        }
+    
+        input[type="submit"] {
+            background-color: #00008b;
+            /* Dark blue background */
+            color: white;
+            /* White text color */
+            padding: 10px 20px;
+            /* Some padding */
+            border: none;
+            /* No border */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #0000cd;
+            /* Slightly lighter blue on hover */
+        }
+    
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+    
+        .form-group label {
+            flex: 0 0 20%;
+            margin-right: 10px;
+        }
+    
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            flex: 1;
+            padding: 10px;
+        }
+    
+        .form-group textarea {
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="/log_in" method="post">
+
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+    
+        <input type="submit" value="Log in">
+    </form>
+
+</body>
+
+</html>
