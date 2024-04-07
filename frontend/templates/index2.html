@@ -75,76 +75,33 @@
         }
     </style>
 </head>
+<h2>Image Classifier</h2>
 
-<body>
-    <h1>Patient's Particulars</h1>
-    <form action="/predict" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-
-        <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" min="1" required>
-        </div>
-
-        <div class="form-group">
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="">Select...</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="height">Height (cm):</label>
-            <input type="number" id="height" name="height" min="1" required>
-        </div>
-
-        <div class="form-group">
-            <label for="weight">Weight (kg):</label>
-            <input type="number" id="weight" name="weight" min="1" required>
-        </div>
-
-        <div class="form-group">
-            <label for="location">Location:</label>
-            <textarea id="location" name="location" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="symptoms">Symptoms:</label>
-            <textarea id="symptoms" name="symptoms" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="duration">Duration (h):</label>
-            <input type="number" id="duration" name="duration" min="1" required>
-        </div>
-
-        <div class="form-group">
-            <label for="causes">Causes:</label>
-            <textarea id="causes" name="causes" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="medicine">Medicine:</label>
-            <textarea id="medicine" name="medicine" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="medicalHistory">Medical history:</label>
-            <textarea id="medicalHistory" name="medicalHistory" required></textarea>
-        </div>
-
-        <input type="submit" value="Submit">
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
     </form>
-    <br>
-    <br>
-    <h4 style="color:Violet;">
-        {{ prediction_text }} </h4>
-</body>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+    <a href="predict1" class="button">Go to Text Prediction</a>
+
+</div>
 
 </html>
