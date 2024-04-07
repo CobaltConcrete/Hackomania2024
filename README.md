@@ -1,3 +1,5 @@
 # Hackomania2024
 
-run app.py
+pip install -r requirements.txt
+
+run: python app.py
